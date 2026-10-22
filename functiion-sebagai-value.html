@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Sebagai Value</title>
+</head>
+<body>
+    <script>
+        /*
+            Function Sebagai Value dan Function Sebagai Parameter
+        => Function tidak hanya bisa digunakan sebagai kode program yang di eksekusi,
+            tapi bisa juga sebagai value
+        => Artinya, fuction bisa disimpan di variable, bisa juga dikirim melalui parameter
+            ke function lainnya 
+        */
+        
+        // Function Sebagai Value di Variable
+        function sayHello (name) {
+            document.writeln(`<p> hello ${name} </p>`)
+        }
+
+        const say = sayHello // function berubah / konversi menjadi value di variable
+        say("Budi")
+
+        /*
+            CATATAN : 
+        => ingat jika menggunakan () artinya, kita ingin memanggil atau mengeluarkan isi dari function nya
+        => jika tidak mengugnakan () artinya kita ingin memasukkan function tersebut ke variable, 
+            bisa di bilang konversi function menjadi sebuah value di variable.
+         */
+
+        // Contoh Funciton Sebagai value Parameter
+        function giveMeName(callback) {
+            callback("Junaidi")
+        }
+        giveMeName(sayHello)
+
+    </script>
+</body>
+</html>

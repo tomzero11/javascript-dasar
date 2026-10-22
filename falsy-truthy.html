@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flasy dan Truthy</title>
+</head>
+<body>
+    <script>
+        /* Falsy dan Truthy adalah konversi type data dari yang bukan boolean dijadikan type data boolean */
+        /* Data Dianggap Falsy (False) => 
+            false       => false,
+            0, -0       => Number 0 dan -0 dianggap false,
+            "", '', ``  => semua string kosong dianggap false,
+            null        => null di anggap false,
+            undefined   => undefined dianggap false,
+            NaN         => Not a Number dianggap false
+        
+        selain di atas maka masuk ke dalam Truthy.
+        */
+
+        let data //undefined
+        if (data) {
+            document.writeln("TRUE")
+        } else {
+            document.writeln("FALSE")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break</title>
+</head>
+<body>
+    <script>
+        /* 
+            break
+        => break digunakan untk menghentikan seluruh perulangan
+
+        */
+
+        let counter = 1
+        while (true) {
+            document.writeln(`<p> Perulangan ke ${counter}`)
+            counter++
+            if (counter > 10) { //check kondisi masih false perulangan terus berjaalan sampe dia true akan berhenti.
+                break
+            }
+        }
+    </script>
+</body>
+</html>

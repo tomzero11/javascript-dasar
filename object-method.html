@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Method</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Object Method / Object Function
+        => Pada Type data object, kita sudah membahas tentang property di Object
+        => Karena sebenarnya function juga merupakan salah satu type data, jadi functoin
+            pun sebenarnya bisa di tambahkan sebagai property.
+        => Cara membuat pun sama dengan function sebagai value
+        => Function di object kadang disebut sebagi Object Method
+        */
+        
+        // Contoh Function di dalam type Data Object
+        const dataName = {
+            firstName : "Eko",
+            sayHello : function (name) {
+                document.writeln(`Hello ${name}`)
+            }
+        }
+        dataName.sayHello("Juned")
+        console.table(dataName)
+
+        // Contoh Semisal Sudah Ada Data Object nya dan inggin menambah property
+        // Dan ingin membuat property menjadi Object Method
+        const dataEmployee = {
+            name : "Jajang Kusnandar"
+        }
+        dataEmployee.address = function (alamat) { // menambah property di dataEmployee
+            document.writeln(`Alamat ${alamat}`)    // dan menjadikan property tersebut menjadi Object Method
+        }
+        dataEmployee.address("Surabaya")
+        console.table(dataEmployee)
+
+    </script>
+</body>
+</html>

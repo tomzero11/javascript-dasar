@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+</head>
+<body>
+    <script>
+        /* 
+            For Loop
+        => For Loop adalah salah satu kata kunci yang bisa digunakan untuk melakukan perulangan
+        => Block code yang terdapat di dalam for akan selalu di eksekusi selama kondisi terpenuhi
+        => dan akan berhenti jika kondisi false
+        */
+
+        /* 
+            Syntack Perulangan For 
+        for (init statement; kondisi; post statement) {
+        perulangan}
+
+        => Init statement akan dieksekusi hanya sekali di awal sebelum perulangan
+        => Kondisi akan dilakukan pengecekan dalam setiap perulangan, jika true
+            perulangan akan dilakukan, jika false perulangan akan berhenti.
+        => Post statement akan dieksekusi setiap kali diakhir perulangan.
+        */
+        
+        for(let i = 1; i <= 20; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                document.writeln("FizzBazz")
+            } else if ( i % 3 === 0) {
+                document.writeln("Fizz")
+            } else if ( i % 5 === 0) {
+                document.writeln("Bazz")
+            } else {
+                document.writeln(i)
+            }
+        }
+
+        const items = ["jeruk", "nanas", "semangka"]
+        for (let i = 0; i < items.length; i++) {
+            console.log(`Buuah ke ${i + 1} : ${items[i]}`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Function Generator
+        => Untuk mengembalikan isi data dari Function Generator menggunakan "yield"
+        */
+
+        /*
+            Function Generator
+        => Function Generator Sifatna Lazy
+        => Jadi artinya jika datanya belum kita ambil dari generator, maka yield 
+            selanjutnya tidak akan di ekesekusi
+        */
+
+        // Contoh sederhana Function Generator
+        function * createName() {
+            yield "Mamad" // mengembalikan data menggunakan "yield"
+            yield "kusnandar"
+            yield "Isnaini"
+        }
+        const name = createName()
+        for (const item of name) {
+            document.writeln(item)
+        }
+
+        // Contoh Function Mengeluarkan angka Ganjil
+        function * getValueGanjil(value) {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 === 1) {
+                    yield i // mengembalikan hanya nilai ganjil 
+                }
+            }
+        }
+        const valueGanjil = getValueGanjil(20)
+        for (const items of valueGanjil) {
+            console.log(items)
+        }
+
+        // Contoh Function Generator bersifat Lazy
+        function * getValueGenap(value) {
+            for (let i = 1; i <= value ; i++) {
+                if ( i % 2 === 0) {
+                    yield i
+                }
+            }
+        }
+        const valueGenap = getValueGenap(10) 
+        console.log(valueGenap.next().value) // dia akan di eksekusi satu persatu ketika memang di butuhkan
+        console.log(valueGenap.next().value) // tidak langsung semua angka 10, karena functin generator bersifat lazy
+        console.log(valueGenap.next().value) // Intinya dia akan di eksekusi jika memang di butuhkan jika tidak di butuhkan dia tidak akan dieksekusi
+    </script>
+</body>
+</html>

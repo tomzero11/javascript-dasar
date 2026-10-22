@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Arrow Function
+        => Arrow function adalah alternatif pembuatan function yang lebih sederhana
+            dari function biasanya
+        => Namun terdapat limitasi dan juga tidak bisa digunaan di semua situasi
+        => Dimanakan arrow function karena menggunakn => (anak panah)
+        => Berikut contoh beberapa kekurangan arrow function : 
+            -> Tidak bisa digunakan untuk membuat Function Generator
+            -> Tidak bisa mengakses this (function object)
+            -> Tidak bisa mengakses Super (OOP)
+        */
+
+        // Arrow Function tidak ada paramteer
+        const sayHello = () => {
+            let name = "Mamad"
+            document.writeln(`Hello ${name}`)
+        }
+        sayHello()
+
+        // Array Functon Ada paramater
+        const sayHai = (name) => {
+            const say = (`Hai ${name}`)
+            document.writeln(say)
+        }
+        sayHai("Eko")
+
+        /*
+            Arrow Function Tanpa Block
+        => Jika sebuah arrow function isinya sederhana, misal hanya satu baris
+        => Kita bisa membuat arrow function tanpa harus menggunakan block
+        */
+
+        // Arrow Function Tanpa Block
+        const gimeMeName = (name) => document.writeln(`<p> Hello Name ${name} </p>`)
+        gimeMeName("kurniawan")
+
+        /*
+            Arrow Function Return Value
+        => Arrow function bisa mengembalikan value, sama seperti function pada umum nya
+        => Jika menggunakan block, maka kita perlu menggunakan kata kunci "return"
+        => Jika tidak menggunakan block, kita tidak perlu  menggunakan kata kunci "return"
+        */
+
+        // Contoh Arrow Function Return Value Tanpa Block
+        const sum = (value1, value2) => value1 + value2
+        document.writeln(sum(10, 10))
+
+        // Contoh Arrow Function Return Value Menggunakan Block
+        const perkalian = (value1, value2) => {
+            return value1 * value2
+        }
+        document.writeln(perkalian(5,2))
+
+        /*
+            Arrow Function Tanpa Kurung di Parameter
+        => Jika parameter di arrow function tersebut hanya ada 1 (SATU),
+            kita bisa tidak menggunakan kurung pada parameter tersebut
+        => Jika parameter ada 2 (DUA) aturan ini tidak berlaku jadi harus menggunakan kurung ()
+            di parameter
+        */
+
+        // Contoh Hanya Ada satu parameter di Arrow Functoin
+        const sayName = name => document.writeln(`<p> Hello  ${name} </p>`)
+        sayName("Julianto")
+
+        /*
+            Arrow Function Sebagai Parameter
+        => Karena Arrow Functin sama seperti Anonymous Function
+        => Jadi kita bisa menggunakan Arrow Function sebagai parameter di Funciton Lain
+        */
+
+        // Contoh Arrow Function Sebagai Parameter di Function Lain
+        const dataEmployee = (callback) => {
+            callback("juned")
+        }
+        dataEmployee( name => document.writeln(`<p> data name employee ${name} </p>`))
+
+        // Contoh Arrow Functin Bisa di Simpan di Variable 
+        const giveMeSum = (value1, value2) => {
+            return value1 + value2
+        }
+        const jumlah = giveMeSum
+        document.writeln(`Total dari jumlah ${jumlah(1,2)}`)
+    </script>
+</body>
+</html>

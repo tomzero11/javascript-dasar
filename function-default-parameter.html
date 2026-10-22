@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Default Parameter</title>
+</head>
+<body>
+    <script>
+        const dataRegister = {
+            firstNane : null, 
+            lastName  : null,
+            gender    : undefined
+        }
+        function dataUser(firstName, lastName, gender) {
+            // Check propety type data object value nya null atau undefined.
+            const userFirstName = firstName ?? "UNKNOWN"
+            const userLastName = lastName ?? "UNKNWON"
+            const userGender = gender ?? "UNKNOWN"
+
+            // return value
+            const user = `fistName : ${userFirstName} lastName : ${userLastName} Gender : ${userGender}`
+            return user
+        }
+
+        dataRegister.firstNane = "Mamad"
+        dataRegister.lastName = "Kurniawan"
+        dataRegister.gender = "laki-laki"
+
+        
+        console.table(dataRegister)
+        document.writeln(`<p> ${dataUser(dataRegister.firstNane, dataRegister.lastName, dataRegister.gender)} <p/>`)
+
+
+    </script>
+</body>
+</html>

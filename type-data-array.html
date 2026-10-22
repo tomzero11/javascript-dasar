@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Data Array</title>
+</head>
+<body>
+    <script>
+        /* Di cara sederhana mengenal Array di array data deret di sebut Index*/
+        const dataNewName = ["kurniawan", "mamad", "susilo", "handoko"]
+        document.writeln(dataNewName[2]) // mendapat data posisi index
+
+        /* Menambahkan data ke array kosong menggunakan functi "push" */
+        const dataName = [];
+        dataName.push("Eko")
+        dataName.push("Kurniawan")
+        dataName.push("Kanedy")
+        dataName.push("mamad", "lala", "lili")
+        console.table(dataName)
+
+        /* untuk mengetahui panjang dari array ingat array menggunakan index ke 0 jadi n-1 */
+        document.writeln(dataName.length)
+
+        /* Jika ingin merubah data di array */
+        dataName[0] = "hajirin" // awal nya data nya "eko" menjadi "hajirin"
+        console.table(dataName)
+
+        /* 
+        Jika ingin menghapus data array tapi tidak akan tergeser hanya data nya saja yang hilang,
+        jadi index datanya di hilangkan jika ingin menggunakan lagi tinggal di masukkan data lagi 
+        menggunakan function push() atau push ke index yang tadi sudah di hapus
+        */
+        delete dataName[0]
+        console.table(dataName)
+    </script>
+</body>
+</html>

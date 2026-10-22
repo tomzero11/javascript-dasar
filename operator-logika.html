@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika</title>
+</head>
+<body>
+    <script>
+
+        // Logika DAN (kedua value harus bernilai benar)
+        const nilaiUjian = 70;
+        const nilaiAbsensi = 70;
+
+        const lulusUjian = nilaiUjian > 75;
+        const lulusAbsensi = nilaiAbsensi > 75;
+        const lulus = lulusAbsensi && lulusAbsensi;
+        document.writeln(lulus)
+
+        // Logika OR (salah satu true maka true)
+        const nilaiPraktek = 80;
+        const nilaiMateri = 70;
+
+        const lulusPraktet = nilaiPraktek > 75;
+        const lulusMateri = nilaiMateri > 75;
+        const lulusUjikompentensi = lulusPraktet || lulusMateri
+        document.writeln(lulusUjikompentensi)
+        
+        // Logika Unery (merubah awal tru jadi false, begitu sebalik nya )
+        const kelulusan = !true
+        const tidaklulus = !false
+        document.writeln(kelulusan)
+        document.writeln(tidaklulus)
+    </script>
+</body>
+</html>

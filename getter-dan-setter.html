@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter dan Setter</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Getter dan Setter
+        => Getter dan Setter adalah kemampuan membuat sebuah function 
+        => Getter digunakan untuk "Mengambik Data" kata kunci "get"
+        => Setter digunakan untuk "Mengubah Data" kata kunci "set"
+        => Dengan menggunakan Getter dan Setter, kita bisa melakukan hal apapun dalam 
+            function sebelum sebuah property di akses atau di ubah, misal menambah validasi 
+            dan lain-lain
+        */ 
+
+        const dataEmployee = {
+            firstName : "",
+            lastName : "",
+            // Mengambil data firstName dan lastName di data Object
+            get fullName() {
+                return `firstName ${this.firstName}, lastName ${this.lastName}`
+            },
+            // Merubah data firstName dan lastName di data Object
+            set fullName(value) {
+                // memecah Stirng berdasarkan Spasi
+                // Functin Split secara otomatis akan memecah dan menjadi kan data menjadi type Data Array
+                const data = value.split(" ") 
+                this.firstName = data[0]
+                this.lastName = data [1]
+            }
+        }
+
+        dataEmployee.fullName = "Jajang Kusnandar"
+        document.writeln(`<p> ${dataEmployee.fullName} </p>`)
+        console.table(dataEmployee)
+        
+        dataEmployee.fullName = "Jokowi Widodo"
+        document.writeln(`<p> ${dataEmployee.fullName} </p>`)
+        console.table(dataEmployee)
+        
+        dataEmployee.fullName = "mamang kunaidi"
+        document.writeln(`<p> ${dataEmployee.fullName} </p>`)
+        console.table(dataEmployee)
+
+        const name = "Mamad Isnaisi"
+        const names = name.split(" ")
+        console.log(names)
+
+    </script>
+</body>
+</html>

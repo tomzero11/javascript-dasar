@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Percabangan(Kondisi)</title>
+</head>
+<body>
+    <script>
+        /* Kondisi percabangan kondisi */
+        /* If Else Expression */
+        const examValue = 80
+        if(examValue > 70) {
+            document.writeln(`<p> Lulus </p>`)
+        } else {
+            document.writeln(`<p> Belajar lagi </p>`)
+        }
+
+        /* Else If Exppression*/
+        const rangkingNilai = 80
+        if(rangkingNilai >= 90 ) {
+            document.writeln(`<p> Good Job </P>`)
+        } else if (rangkingNilai >= 80 ) {
+            document.writeln(`<p> Good lebih giat lagi <p>`)
+        } else {
+            document.writeln(`<p> Belajar Lebih Semanga lagi </p>`)
+        }
+        /* Fizz Bazz*/
+        let a = 20
+        for(let i = 1; i <= a; i++) {
+            if ( i % 3 === 0 && i % 5 === 0) {
+                console.log("Fizz Bazz")
+            } else if ( i % 3 === 0) {
+                console.log("Fizz")
+            } else if ( i % 5 === 0) {
+                console.log("Bazz")
+            } else {
+                console.log(i)
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Rest Parameter & Spread Syntax</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Rest Parameter
+        => Rest Parameter adalah fitur dimana kita bisa mengirim data sebanyak-banyaknya
+            pada satu parameter, dan secara otomatis akan di konversi menjadi type Data Array
+        => Untuk membuat rest parameter, ada ketentuan nya : 
+            -> Rest Parameter hanya boleh ada satu di function, tidak boleh lebih dari satu.
+            -> Rest Parameter hanya boleh berada di posisi paling akhir, tidak boleh di depan 
+                atau di tengah, kecuali memang cuma ada 1 parameter.
+        */
+        
+        // Contoh Rest Parameter
+        function numberSum(name , ...number) {
+            let total = 0
+            for (const item of number) {
+                total = total + item
+            }
+            document.writeln(`Jumlah ${name} ${total}`)
+        }
+        numberSum("Penjumlahan" , 1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+        /*
+            Spread Syntax
+        => Jika ada sebuah data Array, dan ingin di kirimkan ke Rest Parameter
+        => Case serperti itu bisa terjadi mengirim data array yang udah ada ke Rest Parameter
+        => Kita busa gunakan ... (titil tiga kali) diikuti dengan Array nya ketika memanggil function
+        => Fitur ini dinamakan Spread Syntax
+        */
+
+        // Contoh spread Parameter
+        const dataNuber = ["Penjumlahan",1,2,3,4,5,6,7,8,9]
+        function totatNumber(name, ...number) {
+            let total = 0
+            for (const item of number) {
+                total = total + item
+            }
+            document.writeln(`<p> Hasil ${name} ${total} </p>`)
+        }
+        totatNumber(...dataNuber)
+
+    </script>
+</body>
+</html>

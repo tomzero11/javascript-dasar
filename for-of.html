@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Of </title>
+</head>
+<body>
+    <script>
+        /*
+            For Of
+        => For of digunakan untuk melakukan iterasi terhadap isi value dari iterable, 
+            seperti data Array, String, Map, Set, TypedArray, Arguments, DOM Collextiions.
+        => For of TIDAK BISA digunakan untuk iterasi TYPE DATA OBJECT
+        */
+
+        // Contoh For Of Type Data Array
+        const dataEmployee = ["eko", "jajang", "kurniawan"]
+        for (const data of dataEmployee) {
+            document.writeln(`<p> data kariawan : ${data} </p>`)
+        }
+        // Contoh For Of type data String
+        const name = "Julianto Nugraha Simanjuntak"
+        for ( const nameLength of name) {
+            document.writeln(`<p> ${nameLength} </p>`)
+        }
+    </script>
+</body>
+</html>

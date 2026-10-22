@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP CONFIRM</title>
+</head>
+<body>
+    <script>
+        /* Java Script memiliki fitur yang bernama alert, prompt, confirm*/
+        /* => Confirm : digunakan untuk meminta input boolean dari user browser dalam bentuk popup input pilihan */
+        const masuk = confirm("apakah anda benar ingin masuk ?")
+        if(masuk) {
+            const name = prompt("masukkan nama anda ? ")
+            alert(`Hello ${name}`)
+        } else {
+            alert("Bye Bye")
+        }
+    </script>
+</body>
+</html>

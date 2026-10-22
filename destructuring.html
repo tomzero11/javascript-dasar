@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Destructuring 
+        => Destructuring adalah fitur yang bisa digunakan untuk membongkar
+            value-value di Array atau object ke dalam variable-variable
+        => Fitur ini sangat mempermudah kita ketika ingin mengambil data dari Array
+            atau data Object tanpa harus menginisialisasi satu persatu dari masing-masing data
+        */
+
+        // Contoh Tanpa Destructuring 
+        const dataName = ["mamad", "jajang", "kusnandar", "julianto"]
+        const name1 = dataName[0]
+        const name2 = dataName[1]
+        const name3 = dataName[2]
+        const name4 = dataName[3]
+        // Hasil nya lama dan terlalu banyak code yang harus di inisialisasi dari masing-masing data
+        console.log(name1)
+        console.log(name2)
+        console.log(name3)
+        console.log(name4)
+
+
+        // Contoh Destructuring di Type Data Array 
+        const dataEmployee = ["yoga", "isna", "Kuniadi", "kurniawan", "supri", "oto" , "loli"]
+        const [dataEmlployee1, dataEmlployee2, ...others ] = dataEmployee
+        console.log(dataEmlployee1)
+        console.log(others)
+        
+        // Contoh Destructuring di Type Data Array 
+        // Sedikit Berbeda Untuk Type Data Object
+        const dataPerson = {
+            firstName   : "",
+            lastName    : "",
+            address     : {
+                street : "",
+                city   : "",
+                country : ""
+            },
+            hobby   : "",
+            comfortFood : "",
+            get profile() {
+                return `
+                Name    : ${this.firstName} ${this.lastName} 
+                Address : ${this.address.street} ${this.address.city} ${this.address.country}
+                Hobby   : ${this.hobby}
+                Conford Food : ${this.comfortFood}
+                `
+            },
+            set profile(value) {
+                const data = value.split(" ")
+                this.lastName           = data[1] ?? "" // Kadang user input tidak lengkap dengan apa yang di minta jika tidak di isi
+                this.address.street     = data[2] ?? "" // data akan menjadi undefined
+                this.firstName          = data[0] ?? "" // Nullish Coalescing untuk menjaga agar niali tidak null atau undefined
+                this.address.city       = data[3] ?? ""
+                this.address.country    = data[4] ?? ""
+                this.hobby              = data[5] ?? ""
+                this.comfortFood        = data[6] ?? ""
+            }
+        }
+        dataPerson.profile = "Kurniawan Isnaini Jl.Pahlawan Surabaya Indonesia Prgramming Mie"
+        // Untuk di Type Data Object Destructuring menggunakan {}
+        const {firstName, lastName, address: { street,city, country}, ...rest} = dataPerson
+        console.log(firstName)
+        console.log(lastName)
+        console.log(street)
+        console.log(city)
+        console.log(country)
+        console.log(rest)
+
+        /*
+            Destructuring Function Parameter
+        => Destructuring tidak hanya bisa dilakukan di variable, tapi juga bisa dilakukan
+            di function parameter
+        => Hal ini membuat kita mudah ketika ingin mengambil Nested Data dalam Array 
+            atau Object dalam function
+        */ 
+
+        // Contoh Destructuring Di Function Parameter Object
+        function displayPerson({firstName, middleName, lastName}) {
+            console.log(firstName)
+            console.log(middleName)
+            console.log(lastName)
+        }
+        const person = {
+            firstName : "Maman",
+            middleName : "oto",
+            lastName : "junaidi",
+        }
+        displayPerson(person)
+
+        //Contoh Destructuring Di Function Parameter Array
+        function sumValue([value1, value2]) {
+            return value1 + value2
+        }
+        const nilai = [10, 20]
+        console.log(sumValue(nilai))
+        
+        /*
+            Destructuring Default Value
+        => Yang paling menarik di Destructuring adalah, kita bisa menambahkan default value
+        => Jadi misal kita melakukan Destructuring terhadap Array, ternyata tidak ada data di dalamnya
+            maka kita bisa menambahkan default value nya
+        => Begitu pula dengan Type Data Object, jika ternyata property nya tidak ada, maka kita bisa 
+            menambahkan default value 
+            Artinya : Menambah Property baru dan sekaligus Set Default Value di Property tersebut
+        */ 
+
+        // Contoh Destructuring Default Value 
+        const dataNameEmployee = {
+            name : "Mamad",
+            age : 20,
+            gender : "laki-laki"
+        }
+        //  kalau property ada pakai yang di varible jika tidak ada property nya pakai yang di Destructuring
+        const {name, age, gender = "Male or Female" /* Set Default Value*/ } = dataNameEmployee
+        console.log(name)
+        console.log(age)
+        console.log(gender)
+    </script>
+</body>
+</html>

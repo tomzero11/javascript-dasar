@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Value</title>
+</head>
+<body>
+    <script>
+
+        /* 
+            FUNCTION RETIURN VALUE
+        => Secara default, function itu tidak mengahsilan value apapun,
+            namun kita juga bisa membuat function mengembalikan sebuah nilai
+        => Agar funtion bisa menghasilkan value, kita bisa menggunakn kata kunci return,
+            di dalam function nya
+        => Dan di dalam block function untuk menghasilkan nilai tersebutm kita harus 
+            menggunakan kata kunci return lalu diikuti dengan data yang ingin kita hasilkan
+        => Functon hanya bisa mengembalikan satu data, jika kita ingin mengembalikan beberapa data
+            sekaligus, kita bisa menggunakan Array sebagai return value nya.
+        => Return value bebas unttuk type data nya, String, Number, Array, Object BEBAS
+        */
+
+        /*
+            Function Return Value = Menghentikan Eksekusi dengan Return
+        => Saat kita menggunakan kata kunci return, maka code setelah return tersebut tidak akan dieksekusi
+        => kita menggunakan return untuk mengehentikan eksekusi sebuah function
+        */ 
+
+        // Contoh mengembalikan value String
+        function sayHello(fistname, lastName) {
+            const say = `Hello ${fistname} ${lastName}`
+            return say
+        }
+        const result = sayHello("Kurniawan" , "Mamad")
+        document.writeln(`<p> ${result} </p>`)
+
+        // Contoh Return Value Lebih Dari Satu
+        function getValue(nilai)  {
+            if ( nilai > 90) {
+                return "A"
+            } else if (nilai > 80) {
+                return "B"
+            } else if (nilai > 70) {
+                return "C"
+            } else if ( niai > 60) {
+                return "D"
+            } else {
+                return "E"
+            }
+        }
+        const lulus = getValue(95)
+        document.writeln(`<p> anda mendapat nilai ${lulus} </p>`)
+    
+        // Mencari value di dalam type Data Array
+        const dataNumber  = [11,22,34,41,5,63,7,123,34,76,45,23,1]
+        function isCointains(array, searchValue) {
+            for (const [ index, element] of array.entries()) {
+                console.log(`menemukan data yang di cari ${element}`)
+                if ( element === searchValue) {
+                    document.writeln(`<p> nilai yang di cari ${element} index ke ${index} </p>`)
+                    return true
+                }
+            }
+            document.writeln("data tidak ditemukan")
+            return false
+        }
+        const value = 20
+        const found = isCointains(dataNumber, value)
+        document.writeln(`<p> ${found} <p/>`)
+        
+    </script>
+
+</body>
+</html>

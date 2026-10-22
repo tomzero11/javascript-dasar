@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Kunci This</title>
+</head>
+<body>
+    <script>
+    
+        /*
+            Kata Kunci This
+        => Kata kunci this adadalah referensi ke object milik siapa
+        => Tiap lokasi kata kunci this, bisa berbeda-beda referensi pemiliknya
+        => Dalam Object Method, this merupakan referensi ke object pemilik variable nya
+            artinya : variabel object penampungnya
+        => Di Global Scope, this merupakan referensi ke Global Object (di browser biasanya Widow)
+        => Di Dalam Function, this merupakan referensi ke Global Object (di browser biasanya Widow)
+        => Di function dengan strict mode this adalah undefined
+        => Dalam event, this merupakan referensi ke element yang menerima event 
+        */
+
+        // This di Global Scope
+        console.log(this) // hasil Window
+        
+        // This di dalam function 
+        function sample() {
+            console.log(this) // hasil Window
+        }
+        sample()
+
+        // This di dalam Nested Function / Function dalam Function
+        function sayHello() {
+            // This dalam function
+            function name() {
+                console.log(this) // hasil Window
+            }
+            name()
+        }
+        sayHello()
+
+        // This Di Object Method
+        const person = {
+            name : "Eko", // this milik property name di variable person
+            sayHai : function(name) {
+                // Jika ingin mengakses property name gunakan kata kunci this.
+                console.log(`Hello ${name} , my name is ${this.name}`) 
+                // this.name hasilnya "Eko"
+                // sedangkan parameter name hasil nya argument "Budi"
+            }
+        }
+        person.sayHai("Budi")
+
+
+    </script>
+
+</body>
+</html>

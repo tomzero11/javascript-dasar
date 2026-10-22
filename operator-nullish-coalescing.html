@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Nullish Coalescing</title>
+</head>
+<body>
+    <script>
+        /* 
+            Operator Nullish Coalescing
+        => Operator Nullish Coalescing Operator digunakan KHUSUS hanya untuk type dataEmployee atau variable null dan undefined
+        => Operator Nullish Coalescing Operator (??) adalah operator mirip dengan if ternary opartor, yang membedakan adalah pada kondisi
+            jika berniali null atau undefined, baru value default nya akan di ambil selain null dan undefined tidak akan di ambil.
+        */
+
+        // Contoh Tanpa Operator Nullish Coalescing 
+        let parameter;
+        let dataEmployee = parameter
+        if (dataEmployee === null || dataEmployee === undefined) {
+            dataEmployee = "Nilai Default" // dataEmployee nya di rubah yang awalnya null atau undefined menjadi "Nilai default" bahwa di dalam ada data string atau menjadi type data string
+        }
+        document.writeln(dataEmployee)
+
+        // Check type dataEmployee apakah type data null atau undefined
+        if (dataEmployee === undefined) {
+            document.writeln("Undefined")
+        } else if (dataEmployee === null) {
+            document.writeln("null")
+        } else {
+            document.write(`Bukan Null dan bukan Undefined melainkan ${dataEmployee}`)
+        }
+        
+        // Contoh Menggunakan Operator Nullish Coalescing 
+        let manajer; 
+        const dataManajer = manajer ?? "Nilai Default"
+        document.writeln(`<p> ${dataManajer} </p>`)
+        
+        // Check type dataManajer apakah type data null atau undefined
+        if (dataManajer === undefined) {
+            document.writeln("Undefined")
+        } else if (dataManajer === null) {
+            document.writeln("null")
+        } else {
+            document.write(`<p>Bukan Null dan bukan Undefined melainkan ${dataManajer} </P>`)
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Data Objecr</title>
+</head>
+<body>
+    <script>
+        document.writeln(`<h1> Type Data Object </P>`)
+
+        /* Cara membuat type data Objek sama seperti array */
+        const dataName = {}
+        console.table(dataName)
+
+        /* Cara menambahkan type data object yang kosong*/
+        /* Jika ingin data nya masih belum tau string atau number di kasih value null saja
+        di property nya jadi nanti jika ada data baru masuk di umur bisa string atau number */ 
+        const dataPerson = {
+            name : "",
+            alamat : "",
+            umur : null
+        }
+        dataPerson["name"] = "Adi Kunaidi"
+        dataPerson["alamat"] = "Surabaya"
+        dataPerson["umur"] = 20
+
+        console.table(dataPerson)
+
+        /* Cara langsung memberika property dan value secara lansung di type object */
+        const person = {
+            name : "Eko Kurniawan",
+            alamat : "Jakarta",
+            umur : 30
+        }
+        console.table(person)
+
+        /* Caara  mengakses Property Object*/
+        const orang = {
+            name : "Jajang Kunaidi",
+            alamat : "Sumbawa",
+            umur : 20
+        }
+        console.log(`${orang.name}`)
+        console.log(`${orang.alamat}`)
+        console.log(`${orang.umur}`)
+
+    </script>
+</body>
+</html>

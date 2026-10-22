@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In</title>
+</head>
+<body>
+    <script>
+
+        /* 
+            For In 
+        => for in di set digunakan untuk mengiterasi seluruh data property di object
+        => For in biasanya diguakan untuk mengecheck di dalam type data object ada property apa saja di dalamnya.
+        => For in memang bisa digunakan untuk data Array tapi TIDAK DIREKOMENDASIKAN.
+        */
+        
+        // Contoh For In Untuk type data Object
+        const dataEmployee = {
+            firstName   : "Julianto",
+            middleName  : "Aji",
+            lastName    : "Nugraha"
+        }
+
+        for (const property in dataEmployee) {
+            document.writeln(`<p> Property ${property} : ${dataEmployee[property]} </p>`)
+            console.log(`${property} : ${dataEmployee[property]}`)
+        }
+
+    </script>
+</body>
+</html>

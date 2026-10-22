@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika Non Boolean</title>
+</head>
+<body>
+    <script>
+
+        /*
+        Di JavaSctipt kita bisa menggunakan operator logika AND(&&) dan OR(||) untuk type data non boolean
+        */
+    
+        /* 
+            Operator OR (||) di Non Boolean :
+        => Operator logika OR(||), membaca dari kiri ke kanan.
+        => Operator ini akan mengambil nilai pertama yang "Truthy"
+        => Jika semua tidak ada satupun yang bernilai "Truthy" maka yang terkahir yang akan diambil
+        */
+
+        /* Data Dianggap Falsy (False) => 
+            false       => false,
+            0, -0       => Number 0 dan -0 dianggap false,
+            "", '', ``  => semua string kosong dianggap false,
+            null        => null di anggap false,
+            undefined   => undefined dianggap false,
+            NaN         => Not a Number dianggap false
+        
+        selain di atas maka masuk ke dalam Truthy.
+        */
+        // CONTOH OR 
+        console.log("" || "HELLo")
+        console.log("" || [])
+        console.log({} || "")
+        console.log( "0" || "NOL") // Jika sama-sama Truthy di ambil yang paling kiri
+        console.log( 0 || "NOL")
+        console.log( null || "NULL")
+        console.log( undefined || "UNDEFINED")
+
+        // Contoh case yang sering dignakan pada Operator Logika Non Boleaan
+        const dataEmployee = {
+            firstName : "",
+            lastName : "Kurniawan"
+        }
+        // Semisal di property pertama value string kosong atau null atau undefined
+        const data = dataEmployee.firstName || dataEmployee.lastName // yang di ambil yang ada nilai nya (Truthy)
+        console.log(data)
+
+        /*
+            Operator AND (&&) di Non Boolean :
+        => Operator logika AND (&&), membaca dari kiri ke kanan,
+        => Operator ini akan mengambil nilai pertam dary "Falsy"
+        => Jika tidak ada satupun yang bernilai Falsy, maka nilai terkahir yang akan diambil
+        */
+        
+        // CONTOH AND (&&)
+        console.log("" && "HELLo")
+        console.log([] && "")
+        console.log({} && "")
+        console.log( "0" && "NOL") // Jika sama-sama Falsy di ambil yang paling akhir
+        console.log( 0 && "NOL")
+        console.log( null && "NULL")
+        console.log( undefined && "UNDEFINED")
+        console.log( "undefined" && "null")
+
+        const dataPerson = {
+            firstName : "Jajang",
+            lastName : ""
+        }
+        const getDataPerson =  dataPerson.firstName && dataPerson.lastName // yang di ambll yang kosong (Falsy)
+        console.log(getDataPerson) 
+
+    </script>
+</body>
+</html>

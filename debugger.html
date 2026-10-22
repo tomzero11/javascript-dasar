@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugger</title>
+</head>
+<body>
+    <script>
+
+        /*
+            Debugger
+        => Debugger digunakan untuk melakukan proses debugging
+        => Debugging adalah proses mencari bug (masalah) yang biasa terjadi di Code Program
+        => Dengan Debugger kita bisa mengentikan Code Program di posisi yang kita inginkan 
+            (breakpoint), lalu melihat semua isi variable yang ada pada saat Code Program sedang berhenti
+        */
+
+        // Contoh Debugger
+        function createFullName (firstName, middleName, lastName) {
+            const fullName = `${firstName} ${middleName} ${lastName}`
+            return fullName
+        }
+        const name = createFullName("Juned", "Kusnaidi" , "Pratama")
+        console.log(name)
+
+        // Contoh Debugger 
+        function sumValue(...value) {
+            let nilai = 0
+            for (const item of value) {
+                nilai = nilai + item
+            }
+            return nilai
+        }
+        const array = sumValue(1,2,3,4,5)
+        console.log(array)
+        
+        function dataNumber(...value) {
+            let number = 0
+            for (const items of value) {
+                number += items
+            }
+            return number
+        }
+        console.log(dataNumber(1,2,3,4,5,6,7,8))
+
+    </script>
+</body>
+</html>

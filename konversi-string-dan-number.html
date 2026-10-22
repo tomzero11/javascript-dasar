@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Type Data</title>
+</head>
+<body>
+    <script>
+
+        /*  conversi type data ke Number :
+        => Number()         : Mengonversi bilangan ke number bisa bilangan bulat atau bilangan desimal
+        => parseInt()       : konversi ke bilangan bulat
+        => parseFloat()     : konversi ke bilangan desimal
+        */
+
+
+        const value1 = 1
+        const value2 = "1"
+        const conversiToNumber = Number(value2)
+        const total = value1 + conversiToNumber
+        document.writeln(total) // 2
+        document.writeln(`<p>${Number("1.4")}</p>`) // 1
+        document.writeln(`<p>${parseInt("1.9")}</p>`) // 1
+        document.writeln(`<p>${parseFloat("1.9")}</p>`) // 1.9
+
+        /*  conversi type data ke string :
+        => String()         : Mengonversi bilangan number ke string
+        => toStrinng()      : Metode yang menempel pada variabel angka untuk mengubahnya menjadi string
+        */
+        const number = 1
+        const number2 = 1
+        const conversiToString = number.toString() + number2.toString()
+        document.writeln(`${conversiToString}`) // 11
+
+        /* 
+        Di JavaScript ada type data NaN (Not a Number) bukan type number 
+        contoh : huruf "a" di konversi ke number hasil akan NaN.
+        apa pun hasil jika ada type data NaN hasilnya pun akan tetap NaN
+        */
+        const a = "a"
+        const conversiTypeData = Number(a)
+        document.writeln(conversiTypeData) // NaN
+
+        /* Di Javascript parseInt dan parseFloat masih bisa mentolerir
+        asalahkan depan sendiri adalah angka jadi hasilnya buka NaN (Not a Number*/
+        document.writeln(`<p> ${parseInt("1salah")}</p>`) // 1
+        document.writeln(`<p> ${parseFloat("1.1salah")}</p>`) // 1.1
+
+        /*
+        Cek type data NaN atau bukan dengan cara menggunakan function isNaN(),
+        dan mengasilkan berupa data boolean, jika true maka type data itu adalah NaN
+        jika menghasilkan berupa false itu harti nya type data bukan masuk NaN
+        */
+        const checkTypeDataNaN = isNaN(a)
+        document.writeln(checkTypeDataNaN) //NaN
+
+        document.writeln(`<p> ${isNaN("1213123")}</p>`) // false  => walaupun masuk ke dalam string tapi bisa di conversi ke number mangkanya hasil nya adalah false
+        document.writeln(`<p> ${isNaN(100)}</p>`)   //false
+
+    </script>
+</body>
+</html>

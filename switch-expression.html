@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swicth Statement</title>
+</head>
+<body>
+    <script>
+        /* Switch statement adalah percabangan yang sama dengan if, namun lebih sederhana cara pembuatannya*/
+        /* Kondisi do switch statement hanya untuk perbandingan == (sama dengan) tidak bisa menggunakan (<, >, !,) */
+
+        /* Contoh Switct Statement*/
+        const nilai = "E"
+        switch(nilai) {
+            case "A" :
+                document.writeln(`<p> anda lulus dengan sangat baik </p>`)
+                break
+            case "B" :
+                document.writeln(`<p> anda lulus dengan baik </p>`)
+                break
+            case "C" :
+                document.writeln(`<p> anda lulus cukup baik </p>`)
+                break
+            case "D" : 
+                document.writeln(`<p> anda tidak lulus</p>`)
+                break
+            default :
+                document.writeln(`<p> mungkin anda salah jurusan </p>`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        Optional Chaining operator (?) merupakan operator yang digunakan untuk mengamankan ketika kita ingin 
+        mengakses property sebuah object dari data nullish
+        */ 
+       /* 
+        Jika kika mencoba mengakses property dari sebuah object dari data nullish tanpa menggunakan optional
+        chaining operator, maka akan terjadi error
+       */
+
+        /* 
+        Bisa dibilang Optional Chaining digunaknan untuk mengecek type data object
+        property di dalamnya ada atau tidak dan isi value nya null atau undiefined.
+        */
+       // COONTOH Optional Chaining
+        const person = {
+            name : {
+                firstName : {
+                    name : "Mamad"
+                },
+                lastName : {
+                    name : "Kunaidi"
+                }
+            },
+            address : {
+                county : "Indonesia"
+            }
+        }
+        // Optional Chaining mengechek type data object bersarang
+        const countty = person?.address?.county // (?) => simbol Optional Chaining
+        document.writeln(countty)
+
+        const firstName = person?.name?.firstName?.name // (?) => simbol Optional Chaining
+        document.writeln(firstName) 
+        
+        const lastName = person?.name?.lastName?.name // (?) => simbol Optional Chaining
+        document.writeln(lastName) 
+        
+        console.log(person.name.firstName)
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+
+        // cara tidak efektif 
+        const firstName = "Eko";
+        const middleName = "Kurniawan";
+        const lastName = "Khanedy";
+        console.log("Name : " + firstName + " " + middleName + " " + lastName)
+
+        // Cara clean code atau efektif
+        // String template berguna untuk menggabungkan lansung string tanpa ada + sebagai penghubung antar variable
+        const name = "Eko";
+        const middle = "Kurniawan";
+        const last = "Khanedy";
+        const template = `Name : ${name} ${middle} ${last}`;
+        console.log(template)
+
+        // Expression menggunakan string template
+        const nilai = 40;
+        console.log(`name : ${template} lulus : ${nilai > 75}`)
+
+        // String template support multi line 
+        const multiline = `
+hello brother, 
+kamu lagi ngapain,
+mending turu ae,
+        `;
+        document.writeln(`<pre> ${multiline} </pre>`)
+        document.writeln(`<h1> ${multiline} </h1>`)
+    </script>
+</body>
+</html>
